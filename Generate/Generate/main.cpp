@@ -12,13 +12,18 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    auto permutations = generate_permutations(4);
+    auto permutations = generate_permutations(9);
+    
+    cout << "Got " << permutations.size() << " Permutaions\n";
+    
     for (vector<int> &v : permutations) {
         cout << "{ ";
-        for (int x : v) {
-            cout << x << ", ";
+        for (int i = 0; i < v.size(); ++i) {
+            cout << v[i];
+            if (i != v.size() - 1)
+                cout << ", ";
         }
-        cout << "}\n";
+        cout << " }\n";
     }
     return 0;
 }

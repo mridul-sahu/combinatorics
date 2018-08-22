@@ -10,7 +10,7 @@
 
 
 int find_largest_mobile_number (std::vector<int> &values, std::vector<int> &directions, std::vector<int> &positions){
-    for (int i = int(positions.size()) - 1; i >= 0; ++i) {
+    for (int i = int(positions.size()) - 1; i >= 0; --i) {
         int current_pos = positions[i];
         int next_pos = current_pos + directions[i];
         
@@ -61,9 +61,9 @@ std::vector<std::vector<int>> generate_permutations (int n) {
     while (mobile_pos != -1) {
         next_pos = mobile_pos + directions[values[mobile_pos] - 1];
         update_directions(values[mobile_pos], directions);
-        swap(values[mobile_pos], values[next_pos]);
         positions[values[mobile_pos] - 1] = next_pos;
         positions[values[next_pos] - 1] = mobile_pos;
+        swap(values[mobile_pos], values[next_pos]);
         permutations.push_back(values);
         mobile_pos = find_largest_mobile_number(values, directions, positions);
     }
