@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9B9D3D43212D6762005DC1DD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B9D3D42212D6762005DC1DD /* main.cpp */; };
+		9B9D3D4C212D6FC5005DC1DD /* permutation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B9D3D4A212D6FC5005DC1DD /* permutation.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		9B9D3D3F212D6762005DC1DD /* Generate */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Generate; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B9D3D42212D6762005DC1DD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		9B9D3D4A212D6FC5005DC1DD /* permutation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = permutation.cpp; sourceTree = "<group>"; };
+		9B9D3D4B212D6FC5005DC1DD /* permutation.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = permutation.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +60,19 @@
 		9B9D3D41212D6762005DC1DD /* Generate */ = {
 			isa = PBXGroup;
 			children = (
+				9B9D3D49212D6F9F005DC1DD /* src */,
 				9B9D3D42212D6762005DC1DD /* main.cpp */,
 			);
 			path = Generate;
+			sourceTree = "<group>";
+		};
+		9B9D3D49212D6F9F005DC1DD /* src */ = {
+			isa = PBXGroup;
+			children = (
+				9B9D3D4A212D6FC5005DC1DD /* permutation.cpp */,
+				9B9D3D4B212D6FC5005DC1DD /* permutation.hpp */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +131,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B9D3D4C212D6FC5005DC1DD /* permutation.cpp in Sources */,
 				9B9D3D43212D6762005DC1DD /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +253,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XBZLD43N56;
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -248,6 +263,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XBZLD43N56;
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
