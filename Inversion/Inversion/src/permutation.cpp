@@ -61,6 +61,7 @@ bool is_valid_inversion_sequence(std::vector<int> &seq) {
     
     return true;
 }
+
 std::vector<int> get_permutation_from_inversion(std::vector<int> &inv) {
     
     if (!is_valid_inversion_sequence(inv))
@@ -81,4 +82,42 @@ std::vector<int> get_permutation_from_inversion(std::vector<int> &inv) {
     }
     
     return perm;
+}
+
+int permutations_with_k_disorder(int n, int k, int **solutions) {
+    
+    if (n == 0)
+        return 0;
+    
+    if (solutions[n][k] != 0)
+        return solutions[n][k];
+    
+    if (k == 0)
+        return solutions[n][k] = 1;
+    
+    int sum = 0;
+    
+    for (int i = 0; i < n && k - i >= 0; ++i) {
+        sum += permutations_with_k_disorder(n-1, k-i, solutions);
+    }
+    
+    return solutions[n][k] = sum;
+}
+
+int count_permutations_with_inversion_disorder(int n, int k) {
+    if (n == 0)
+        return 0;
+    
+    if (k == 0)
+        return 1;
+    
+    int **arr = new int*[n+1];
+    
+    for (int i = 0; i <= n; ++i) {
+        arr[i] = new int[k+1]();
+    }
+    
+    //memset(arr, -1, sizeof(int) * (n+1) * (k+1));
+    
+    return permutations_with_k_disorder(n, k, arr);
 }

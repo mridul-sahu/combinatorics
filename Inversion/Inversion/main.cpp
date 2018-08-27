@@ -37,6 +37,11 @@ int main(int argc, const char * argv[]) {
         }
     }
     
+    if (5 != count_permutations_with_inversion_disorder(4, 2)) {
+        cout << "Count permutations with invesrsion disorder not correct" << endl;
+        return 0;
+    }
+    
     cout << "Works fine" << endl;
     
     return 0;
