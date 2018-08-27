@@ -117,7 +117,5 @@ int count_permutations_with_inversion_disorder(int n, int k) {
         arr[i] = new int[k+1]();
     }
     
-    //memset(arr, -1, sizeof(int) * (n+1) * (k+1));
-    
     return permutations_with_k_disorder(n, k, arr);
 }
